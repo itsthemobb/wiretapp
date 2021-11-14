@@ -11,10 +11,12 @@ import Foundation
 /// Mock `URLProtocol` will return the contents of a json file that matches the lastPathComponent of the request.
 
 public class MockURLProtocol: URLProtocol {
+    public static let testCasePath: String = "testCasePath"
     public class func configureMock() {
         if
-            ProcessInfo.processInfo.environment["testCasePath"] != nil
+            ProcessInfo.processInfo.environment[testCasePath] != nil
         {
+            
             URLProtocol.registerClass(MockURLProtocol.self)
         }
     }
@@ -29,19 +31,11 @@ public class MockURLProtocol: URLProtocol {
 
     public override func startLoading() {
         guard
-            // Check if there's a file
             let fileURL = MockURLProtocol.url(for: request),
-
-            // Unwrap request url
             let url = request.url,
-
-            // Construct response
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil),
-
-            // Unwrap the client
             let client = self.client
-
-            else { return }
+        else { return }
 
         client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
 
@@ -52,22 +46,22 @@ public class MockURLProtocol: URLProtocol {
         client.urlProtocolDidFinishLoading(self)
     }
 
-    public override func stopLoading() {
-
-    }
+    public override func stopLoading() {}
 }
 // MARK: - Private
 private extension MockURLProtocol {
     class func url(for request: URLRequest) -> URL? {
         let count = 0
         guard
-            let directory = ProcessInfo.processInfo.environment["testCasePath"],
+            let directory = ProcessInfo.processInfo.environment[testCasePath],
             let fileName = request.url?.path.replacingOccurrences(of: "/", with: ":"),
             let url = URL(string: directory + "/" + fileName + "/" + "\(String(describing: count))" + ".json") else {
                 return nil
         }
         return url
     }
+    
+    
 //
 //    open func loadJsonFromTestFolder(file: String) -> Data? {
 //        let filename = file.replacingOccurrences(of: "/", with: ":")

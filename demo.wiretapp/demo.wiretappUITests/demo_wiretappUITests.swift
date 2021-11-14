@@ -1,14 +1,12 @@
-//
-//  demo_wiretappUITests.swift
-//  demo.wiretappUITests
-//
-//  Created by Muhammad Usman Ali (LCL) on 2021-11-13.
-//
-
 import XCTest
 
-class WireTappUITests: XCTestCase {
+class WireTappUITests: WiretappBaseTestCase {
     func test_ExampleTest() {
-
+        app.staticTexts["Hello, world!"]
+            .wait(until: \.isHittable)
+            .tap()
+        
+        app.staticTexts["delectus aut autem"]
+            .wait(until: \.exists)
     }
 }
