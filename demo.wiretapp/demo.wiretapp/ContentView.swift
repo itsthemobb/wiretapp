@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  demo.wiretapp
-//
-//  Created by Muhammad Usman Ali (LCL) on 2021-11-13.
-//
-
 import Combine
 import Foundation
 import SwiftUI

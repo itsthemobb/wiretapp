@@ -1,10 +1,3 @@
-//
-//  demo_wiretappApp.swift
-//  demo.wiretapp
-//
-//  Created by Muhammad Usman Ali (LCL) on 2021-11-13.
-//
-
 import SwiftUI
 
 @main
@@ -17,6 +10,6 @@ struct demo_wiretappApp: App {
     }
 
     func setup() {
-        MockURLProtocol.configureMock()
+        Wiretapp.configure()
     }
 }

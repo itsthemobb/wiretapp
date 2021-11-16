@@ -1,26 +1,6 @@
-//
-//  MockURLProtocol.swift
-//  JsonToList
-//
-//  Created by Brad Smith on 3/4/18.
-//  Copyright © 2018 Wayfair. All rights reserved.
-//
 import Foundation
-/// This file does not need to be modified as part of the coding challenge.
-///
-/// Mock `URLProtocol` will return the contents of a json file that matches the lastPathComponent of the request.
 
 public class MockURLProtocol: URLProtocol {
-    public static let testCasePath: String = "testCasePath"
-    public class func configureMock() {
-        if
-            ProcessInfo.processInfo.environment[testCasePath] != nil
-        {
-            
-            URLProtocol.registerClass(MockURLProtocol.self)
-        }
-    }
-
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
@@ -30,6 +10,26 @@ public class MockURLProtocol: URLProtocol {
     }
 
     public override func startLoading() {
+        loadMock()
+    }
+
+    public override func stopLoading() {}
+}
+
+// MARK: - Private
+private extension MockURLProtocol {
+    class func url(for request: URLRequest) -> URL? {
+        let count = 0
+        guard
+            let directory = ProcessInfo.processInfo.environment[Wiretapp.testCasePath],
+            let fileName = request.url?.path.replacingOccurrences(of: "/", with: ":"),
+            let url = URL(string: directory + "/" + fileName + "/" + "\(String(describing: count))" + ".json") else {
+                return nil
+        }
+        return url
+    }
+    
+    func loadMock() {
         guard
             let fileURL = MockURLProtocol.url(for: request),
             let url = request.url,
@@ -45,22 +45,6 @@ public class MockURLProtocol: URLProtocol {
 
         client.urlProtocolDidFinishLoading(self)
     }
-
-    public override func stopLoading() {}
-}
-// MARK: - Private
-private extension MockURLProtocol {
-    class func url(for request: URLRequest) -> URL? {
-        let count = 0
-        guard
-            let directory = ProcessInfo.processInfo.environment[testCasePath],
-            let fileName = request.url?.path.replacingOccurrences(of: "/", with: ":"),
-            let url = URL(string: directory + "/" + fileName + "/" + "\(String(describing: count))" + ".json") else {
-                return nil
-        }
-        return url
-    }
-    
     
 //
 //    open func loadJsonFromTestFolder(file: String) -> Data? {
