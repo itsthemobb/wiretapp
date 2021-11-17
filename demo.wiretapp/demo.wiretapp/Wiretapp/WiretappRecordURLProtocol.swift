@@ -17,11 +17,10 @@ public class WiretappRecordURLProtocol: URLProtocol {
             {
                 self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
                 self.client?.urlProtocol(self, didLoad: data)
-                
+                self.client?.urlProtocolDidFinishLoading(self)
                 // write to disk here
             }
         }
-        client?.urlProtocolDidFinishLoading(self)
     }
 
     public override func stopLoading() {}
