@@ -11,7 +11,7 @@ public class Wiretapp {
         } else if
             ProcessInfo.processInfo.environment[testCasePath] != nil
         {
-            URLProtocol.registerClass(MockURLProtocol.self)
+            URLProtocol.registerClass(WiretappURLProtocol.self)
         }
     }
 }
