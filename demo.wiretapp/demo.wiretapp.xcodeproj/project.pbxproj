@@ -11,6 +11,7 @@
 		7E1D2A61274497CC00594E2C /* WiretappSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */; };
 		7E1D2A6227449D2500594E2C /* WiretappSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */; };
 		7E1D2A6427449F8800594E2C /* WiretappRecordURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A6327449F8800594E2C /* WiretappRecordURLProtocol.swift */; };
+		7E1D2A662747445100594E2C /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A652747445100594E2C /* CustomURLProtocol.swift */; };
 		7E2AFCBD274173A0003A115D /* WiretappBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2AFCBC274173A0003A115D /* WiretappBaseTestCase.swift */; };
 		7E2AFCBE27417444003A115D /* WiretappURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C76627401FCC00EE0136 /* WiretappURLProtocol.swift */; };
 		7E2AFCC0274353CA003A115D /* Wiretapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2AFCBF274353CA003A115D /* Wiretapp.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiretappSessionError.swift; sourceTree = "<group>"; };
 		7E1D2A6327449F8800594E2C /* WiretappRecordURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiretappRecordURLProtocol.swift; sourceTree = "<group>"; };
+		7E1D2A652747445100594E2C /* CustomURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
 		7E2AFCBC274173A0003A115D /* WiretappBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiretappBaseTestCase.swift; sourceTree = "<group>"; };
 		7E2AFCBF274353CA003A115D /* Wiretapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiretapp.swift; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				C168C76627401FCC00EE0136 /* WiretappURLProtocol.swift */,
 				7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */,
 				7E1D2A6327449F8800594E2C /* WiretappRecordURLProtocol.swift */,
+				7E1D2A652747445100594E2C /* CustomURLProtocol.swift */,
 			);
 			path = Wiretapp;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				C168C76727401FCC00EE0136 /* WiretappURLProtocol.swift in Sources */,
 				7E1D2A6427449F8800594E2C /* WiretappRecordURLProtocol.swift in Sources */,
+				7E1D2A662747445100594E2C /* CustomURLProtocol.swift in Sources */,
 				C1E12CD0274033D800C72059 /* NetworkService.swift in Sources */,
 				C168C73E27401CDF00EE0136 /* ContentView.swift in Sources */,
 				7E2AFCC0274353CA003A115D /* Wiretapp.swift in Sources */,
