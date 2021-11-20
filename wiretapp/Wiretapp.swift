@@ -15,4 +15,19 @@ public class Wiretapp {
         configuration.protocolClasses = [WiretappRecordURLProtocol.self, WiretappURLProtocol.self]
         return configuration
     }
+
+    public class func getRootPath() -> String {
+        let pathArray: [String] = #file.split(separator: "/")
+            .dropLast(2)
+            .map { String($0) }
+
+        let path = "file:///" + pathArray.joined(separator: "/")
+        return path
+    }
+
+    public class func getLaunchArgumentsFor(test: String) -> [String: String] {
+        [
+            Wiretapp.testCasePath: Wiretapp.getRootPath() + "/MockResponses/" + test.createDirectoryPath()
+        ]
+    }
 }

@@ -1,11 +1,7 @@
-    import XCTest
-    @testable import wiretapp
+import XCTest
 
-    final class wiretappTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(wiretapp().text, "Hello, World!")
-        }
+final class wiretappTests: XCTestCase {
+    func testExample() {
+
     }
+}

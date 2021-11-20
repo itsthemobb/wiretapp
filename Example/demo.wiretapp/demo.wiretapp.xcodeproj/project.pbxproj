@@ -175,6 +175,8 @@
 				C168C74B27401CE400EE0136 /* PBXTargetDependency */,
 			);
 			name = demo.wiretappTests;
+			packageProductDependencies = (
+			);
 			productName = demo.wiretappTests;
 			productReference = C168C74927401CE400EE0136 /* demo.wiretappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -193,6 +195,8 @@
 				C168C75627401CE400EE0136 /* PBXTargetDependency */,
 			);
 			name = demo.wiretappUITests;
+			packageProductDependencies = (
+			);
 			productName = demo.wiretappUITests;
 			productReference = C168C75427401CE400EE0136 /* demo.wiretappUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
