@@ -49,7 +49,6 @@
 		C168C75427401CE400EE0136 /* demo.wiretappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demo.wiretappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C75827401CE400EE0136 /* demo_wiretappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappUITests.swift; sourceTree = "<group>"; };
 		C168C75A27401CE400EE0136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1CC7ED427496A690037946B /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../../SPM/wiretapp; sourceTree = "<group>"; };
 		C1E12CCC27402F4100C72059 /* MockResponses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MockResponses; sourceTree = "<group>"; };
 		C1E12CCF274033D800C72059 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +102,6 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
-				C1CC7ED427496A690037946B /* wiretapp */,
 				C168C73F27401CE400EE0136 /* Assets.xcassets */,
 				C168C73D27401CDF00EE0136 /* ContentView.swift */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,
@@ -157,6 +155,8 @@
 			dependencies = (
 			);
 			name = demo.wiretapp;
+			packageProductDependencies = (
+			);
 			productName = demo.wiretapp;
 			productReference = C168C73827401CDF00EE0136 /* demo.wiretapp.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +228,8 @@
 				Base,
 			);
 			mainGroup = C168C72F27401CDF00EE0136;
+			packageReferences = (
+			);
 			productRefGroup = C168C73927401CDF00EE0136 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
