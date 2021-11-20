@@ -1,4 +1,5 @@
 import SwiftUI
+import wiretapp
 
 @main
 struct demo_wiretappApp: App {
