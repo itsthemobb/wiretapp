@@ -1,22 +1,23 @@
-//
-//  demo_wiretappApp.swift
-//  demo.wiretapp
-//
-//  Created by Muhammad Usman Ali (LCL) on 2021-11-13.
-//
-
 import SwiftUI
 
 @main
 struct demo_wiretappApp: App {
-    var body: some Scene {
-        setup()
-        return WindowGroup {
-            ContentView(networkService: NetworkService(baseURL: "https://google.com"))
-        }
+    let urlSession: URLSession!
+
+    init() {
+        var config = URLSessionConfiguration.default
+        config = Wiretapp.register(configuration: config)
+        self.urlSession = URLSession(configuration: config)
     }
 
-    func setup() {
-        MockURLProtocol.configureMock()
+    var body: some Scene {
+        return WindowGroup {
+            ContentView(
+                networkService: NetworkService(
+                    baseURL: "https://google.com",
+                    urlSession: urlSession
+                )
+            )
+        }
     }
 }

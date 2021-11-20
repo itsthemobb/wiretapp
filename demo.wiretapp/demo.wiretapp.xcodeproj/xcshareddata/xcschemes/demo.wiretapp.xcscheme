@@ -72,13 +72,13 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "root"
-            value = "file://$(SOURCE_ROOT)/"
+            key = "wiretappRecording"
+            value = "true"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "testCasePath"
-            value = "file://$(SOURCE_ROOT)/MockResponses/WireTappUITests/ExampleTest"
+            key = "mock_responses"
+            value = "file://$(SOURCE_ROOT)/MockResponses/recorded"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
