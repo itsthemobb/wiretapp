@@ -1,19 +1,25 @@
 import Foundation
+
+private var urlCounter: [String: Int] = [:]
 public class WiretappRecordURLProtocol: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    var urlCounter: [String: Int] = [:]
     let recordPath: String = ""
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
     public override class func canInit(with request: URLRequest) -> Bool {
-        return true
+        if let
+            recordingEnabled = ProcessInfo.processInfo.environment[Wiretapp.recordEnabled],
+            recordingEnabled == "true"
+        {
+            return true
+        }
+        return false
     }
 
     public override func startLoading() {
-        self.
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        URLSession(configuration: .ephemeral).dataTask(with: request) { [weak self] data, response, error in
             if
                 let data = data,
                 let response = response,
@@ -31,10 +37,10 @@ public class WiretappRecordURLProtocol: URLProtocol {
                     let filename = self.request.url?.path.fileName,
                     let docURL = URL(string: responsePath)
                 {
-                    self.urlCounter[filename, default: -1] += 1
+                    urlCounter[filename, default: -1] += 1
                     var timesRecorded = 0
 
-                    if let urlCount = self.urlCounter[filename] {
+                    if let urlCount = urlCounter[filename] {
                         timesRecorded = urlCount
                     }
 
@@ -63,6 +69,7 @@ public class WiretappRecordURLProtocol: URLProtocol {
                 }
             }
         }
+        .resume()
     }
     func createFolder(url: URL) throws {
         if !FileManager.default.fileExists(atPath: url.path) {

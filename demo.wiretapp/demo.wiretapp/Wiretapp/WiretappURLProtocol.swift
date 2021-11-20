@@ -1,14 +1,15 @@
 import Foundation
 
+private var urlCounter: [String: Int] = [:]
+
 public class WiretappURLProtocol: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    public var urlCounter: [String: Int] = [:]
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
     public override class func canInit(with request: URLRequest) -> Bool {
-        return true
+        ProcessInfo.processInfo.environment[Wiretapp.testCasePath] != nil
     }
 
     public override func startLoading() {

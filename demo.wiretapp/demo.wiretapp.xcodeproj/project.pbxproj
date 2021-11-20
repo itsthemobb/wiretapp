@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E1D2A5E2743572C00594E2C /* Wiretapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2AFCBF274353CA003A115D /* Wiretapp.swift */; };
 		7E1D2A61274497CC00594E2C /* WiretappSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */; };
-		7E1D2A6227449D2500594E2C /* WiretappSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A60274497CC00594E2C /* WiretappSessionError.swift */; };
 		7E1D2A6427449F8800594E2C /* WiretappRecordURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A6327449F8800594E2C /* WiretappRecordURLProtocol.swift */; };
 		7E1D2A662747445100594E2C /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D2A652747445100594E2C /* CustomURLProtocol.swift */; };
 		7E2AFCBD274173A0003A115D /* WiretappBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2AFCBC274173A0003A115D /* WiretappBaseTestCase.swift */; };
-		7E2AFCBE27417444003A115D /* WiretappURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C76627401FCC00EE0136 /* WiretappURLProtocol.swift */; };
 		7E2AFCC0274353CA003A115D /* Wiretapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2AFCBF274353CA003A115D /* Wiretapp.swift */; };
 		C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */; };
 		C168C73E27401CDF00EE0136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73D27401CDF00EE0136 /* ContentView.swift */; };
@@ -318,11 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E2AFCBE27417444003A115D /* WiretappURLProtocol.swift in Sources */,
-				7E1D2A5E2743572C00594E2C /* Wiretapp.swift in Sources */,
 				7E2AFCBD274173A0003A115D /* WiretappBaseTestCase.swift in Sources */,
 				C168C75927401CE400EE0136 /* demo_wiretappUITests.swift in Sources */,
-				7E1D2A6227449D2500594E2C /* WiretappSessionError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
