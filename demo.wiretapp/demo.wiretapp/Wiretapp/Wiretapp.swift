@@ -5,15 +5,9 @@ public class Wiretapp {
     public static let testCasePath: String = "testCasePath"
 
     public class func configure() {
-        if let
-            recordingEnabled = ProcessInfo.processInfo.environment[recordEnabled],
-            recordingEnabled == "true"
-        {
-            //URLProtocol.registerClass(RecordURLProtocol.self)
-        } else if
-            ProcessInfo.processInfo.environment[testCasePath] != nil
-        {
-            URLProtocol.registerClass(WiretappURLProtocol.self)
-        }
+        // The last registered class gets called first [Muhammad U. Ali]
+        // when a request is dispatched using URLSession.shared
+        URLProtocol.registerClass(WiretappRecordURLProtocol.self)
+        URLProtocol.registerClass(WiretappURLProtocol.self)
     }
 }

@@ -8,7 +8,7 @@ public class WiretappURLProtocol: URLProtocol {
     }
 
     public override class func canInit(with request: URLRequest) -> Bool {
-        return true
+        ProcessInfo.processInfo.environment[Wiretapp.testCasePath] != nil
     }
 
     public override func startLoading() {
