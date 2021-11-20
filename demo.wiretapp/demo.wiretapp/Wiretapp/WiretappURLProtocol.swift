@@ -1,8 +1,9 @@
 import Foundation
 
+private var urlCounter: [String: Int] = [:]
+
 public class WiretappURLProtocol: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    public var urlCounter: [String: Int] = [:]
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }

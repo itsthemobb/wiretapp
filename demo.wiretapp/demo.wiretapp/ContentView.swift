@@ -15,25 +15,27 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text(message)
-                .padding()
-                .onTapGesture {
-                    self.cancellable = networkService.get(
-                        url: URL(string: "https://jsonplaceholder.typicode.com/todos")!,
-                        modelType: [Todo].self
-                    )
-                    .receive(on: DispatchQueue.main)
-                    .sink {
-                        print($0)
-                    } receiveValue: {
-                        todos = $0
+            ScrollView {
+                Text(message)
+                    .padding()
+                    .onTapGesture {
+                        self.cancellable = networkService.get(
+                            url: URL(string: "https://jsonplaceholder.typicode.com/todos")!,
+                            modelType: [Todo].self
+                        )
+                        .receive(on: DispatchQueue.main)
+                        .sink {
+                            print($0)
+                        } receiveValue: {
+                            todos = $0
+                        }
                     }
-                }
-            LazyVStack {
-                ForEach(todos, id: \.title)  { todo in
-                    VStack {
-                        Text(todo.title)
-                        Text(String(todo.completed))
+                LazyVStack {
+                    ForEach(todos, id: \.title)  { todo in
+                        VStack {
+                            Text(todo.title)
+                            Text(String(todo.completed))
+                        }
                     }
                 }
             }

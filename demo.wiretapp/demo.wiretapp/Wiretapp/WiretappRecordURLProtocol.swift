@@ -1,8 +1,8 @@
 import Foundation
 
+private var urlCounter: [String: Int] = [:]
 public class WiretappRecordURLProtocol: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    var urlCounter: [String: Int] = [:]
     let recordPath: String = ""
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
@@ -37,10 +37,10 @@ public class WiretappRecordURLProtocol: URLProtocol {
                     let filename = self.request.url?.path.fileName,
                     let docURL = URL(string: responsePath)
                 {
-                    self.urlCounter[filename, default: -1] += 1
+                    urlCounter[filename, default: -1] += 1
                     var timesRecorded = 0
 
-                    if let urlCount = self.urlCounter[filename] {
+                    if let urlCount = urlCounter[filename] {
                         timesRecorded = urlCount
                     }
 
