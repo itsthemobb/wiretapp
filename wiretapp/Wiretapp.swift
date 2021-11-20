@@ -2,7 +2,7 @@ import Foundation
 public class Wiretapp {
     public static let defaultResponsesPath: String = "defaultResponses"
     public static let recordEnabled: String = "wiretappRecording"
-    public static let testCasePath: String = "testCasePath"
+    public static let testCaseName: String = "testCaseName"
 
     public class func register() {
         // The last registered class gets called first [Muhammad U. Ali]
@@ -25,9 +25,7 @@ public class Wiretapp {
         return path
     }
 
-    public class func getLaunchArgumentsFor(test: String) -> [String: String] {
-        [
-            Wiretapp.testCasePath: Wiretapp.getRootPath() + "/MockResponses/" + test.createDirectoryPath()
-        ]
+    public class func getLaunchArgumentsFor(test: String) -> String {
+        Wiretapp.getRootPath() + "/MockResponses/" + test.createDirectoryPath()
     }
 }

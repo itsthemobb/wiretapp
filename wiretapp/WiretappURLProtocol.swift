@@ -9,7 +9,7 @@ public class WiretappURLProtocol: URLProtocol {
     }
 
     public override class func canInit(with request: URLRequest) -> Bool {
-        ProcessInfo.processInfo.environment[Wiretapp.testCasePath] != nil
+        ProcessInfo.processInfo.environment[Wiretapp.testCaseName] != nil
     }
 
     public override func startLoading() {
@@ -63,11 +63,17 @@ private extension WiretappURLProtocol {
     func loadJsonFromTestFolder(file: String) -> Data? {
         let filename = file.replacingOccurrences(of: "/", with: ":")
         if
-            let directory = ProcessInfo.processInfo.environment[Wiretapp.testCasePath],
+            let testName = ProcessInfo.processInfo.environment[Wiretapp.testCaseName],
             let count = urlCounter[file],
-            let url = URL(string: directory + "/" + filename + "/" + "\(String(describing: count))" + ".json")
+            let url = URL(string: Wiretapp.getLaunchArgumentsFor(test: testName) + "/" + filename + "/" + "\(String(describing: count))" + ".json")
         {
-            return try? Data(contentsOf: url)
+            do {
+                return try Data(contentsOf: url)
+            }
+            catch {
+                print(error)
+                return nil
+            }
         }
         return nil
     }
