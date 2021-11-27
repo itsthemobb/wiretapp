@@ -2,9 +2,9 @@ import Foundation
 import XCTest
 
 open class WiretappBaseTestCase: XCTestCase {
-    let timeOut: TimeInterval = 30
-    var app = XCUIApplication()
-    public override func setUp() {
+    public var timeOut: TimeInterval = 30
+    public var app = XCUIApplication()
+    open override func setUp() {
         super.setUp()
         app = XCUIApplication()
         if let mockResponses = getRootPath() {
