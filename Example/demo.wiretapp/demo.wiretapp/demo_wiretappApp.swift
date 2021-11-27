@@ -1,5 +1,5 @@
 import SwiftUI
-import wiretapp
+//import wiretappTest
 
 @main
 struct demo_wiretappApp: App {
@@ -7,7 +7,7 @@ struct demo_wiretappApp: App {
 
     init() {
         var config = URLSessionConfiguration.default
-        config = Wiretapp.register(configuration: config)
+        //config = Wiretapp.register(configuration: config)
         self.urlSession = URLSession(configuration: config)
     }
 
