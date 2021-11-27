@@ -27,7 +27,8 @@ let package = Package(
             name: "wiretappTest",
             dependencies: [
             ],
-            path: "Sources/wiretappTest/"
+            path: "Sources/wiretappTest/",
+            exclude: [ "Example/" ]
         ),
     ]
 )
