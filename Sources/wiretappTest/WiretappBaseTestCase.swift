@@ -10,7 +10,7 @@ open class WiretappBaseTestCase: XCTestCase {
         app = XCUIApplication()
         if let mockResponses = getRootPath() {
             app.launchEnvironment = [
-                "testCasePath": mockResponses + "/MockResponses/" + name.createDirectoryPath()
+                Wiretapp.testCaseName: mockResponses + "/MockResponses/" + name.createDirectoryPath()
             ]
             print(mockResponses + name.createDirectoryPath())
         }

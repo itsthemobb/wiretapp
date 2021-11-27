@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A34F2212752BA8F00130FBB /* wiretappTest in Frameworks */ = {isa = PBXBuildFile; productRef = 1A34F2202752BA8F00130FBB /* wiretappTest */; };
+		1A34F2242752F62F00130FBB /* Wiretapp in Frameworks */ = {isa = PBXBuildFile; productRef = 1A34F2232752F62F00130FBB /* Wiretapp */; };
+		1A34F2262752F62F00130FBB /* wiretappTest in Frameworks */ = {isa = PBXBuildFile; productRef = 1A34F2252752F62F00130FBB /* wiretappTest */; };
 		C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */; };
 		C168C73E27401CDF00EE0136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73D27401CDF00EE0136 /* ContentView.swift */; };
 		C168C74027401CE400EE0136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C73F27401CE400EE0136 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A34F2242752F62F00130FBB /* Wiretapp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A34F2212752BA8F00130FBB /* wiretappTest in Frameworks */,
+				1A34F2262752F62F00130FBB /* wiretappTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +157,7 @@
 			);
 			name = demo.wiretapp;
 			packageProductDependencies = (
+				1A34F2232752F62F00130FBB /* Wiretapp */,
 			);
 			productName = demo.wiretapp;
 			productReference = C168C73827401CDF00EE0136 /* demo.wiretapp.app */;
@@ -195,7 +198,7 @@
 			);
 			name = demo.wiretappUITests;
 			packageProductDependencies = (
-				1A34F2202752BA8F00130FBB /* wiretappTest */,
+				1A34F2252752F62F00130FBB /* wiretappTest */,
 			);
 			productName = demo.wiretappUITests;
 			productReference = C168C75427401CE400EE0136 /* demo.wiretappUITests.xctest */;
@@ -233,7 +236,7 @@
 			);
 			mainGroup = C168C72F27401CDF00EE0136;
 			packageReferences = (
-				1A34F21F2752BA8F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */,
+				1A34F2222752F62F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */,
 			);
 			productRefGroup = C168C73927401CDF00EE0136 /* Products */;
 			projectDirPath = "";
@@ -596,20 +599,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A34F21F2752BA8F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */ = {
+		1A34F2222752F62F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:MrMUsmanAli/wiretapp.git";
 			requirement = {
 				kind = revision;
-				revision = 1ed99804f040a558fe7f1ec621d4c80eae06e97b;
+				revision = 04a1ddc81002b2b5c1f26e5ecc5b47a368084bd1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A34F2202752BA8F00130FBB /* wiretappTest */ = {
+		1A34F2232752F62F00130FBB /* Wiretapp */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A34F21F2752BA8F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */;
+			package = 1A34F2222752F62F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */;
+			productName = Wiretapp;
+		};
+		1A34F2252752F62F00130FBB /* wiretappTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A34F2222752F62F00130FBB /* XCRemoteSwiftPackageReference "wiretapp" */;
 			productName = wiretappTest;
 		};
 /* End XCSwiftPackageProductDependency section */

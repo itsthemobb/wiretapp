@@ -1,6 +1,6 @@
 import XCTest
 @testable import demo_wiretapp
-import wiretappTest
+import WiretappTest
 
 class WireTappUITests: WiretappBaseTestCase {
     override func setUp() {

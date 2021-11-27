@@ -74,12 +74,12 @@
          <EnvironmentVariable
             key = "wiretappRecording"
             value = "true"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "mock_responses"
             value = "file://$(SOURCE_ROOT)/MockResponses/recorded"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
