@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "wiretapp",
-        "repositoryURL": "https://github.com/MrMUsmanAli/wiretapp",
+        "repositoryURL": "git@github.com:MrMUsmanAli/wiretapp.git",
         "state": {
           "branch": null,
-          "revision": "572b5c9f74bb63ebc16e14374f9b548146c0a1ab",
+          "revision": "1ed99804f040a558fe7f1ec621d4c80eae06e97b",
           "version": null
         }
       }

@@ -1,6 +1,6 @@
 import Foundation
 
-extension String {
+public extension String {
     func groups(for regexPattern: String) -> [String] {
         do {
             let text = self

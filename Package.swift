@@ -2,7 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 let package = Package(
-    name: "wiretapp",
+    name: "Wiretapp",
     platforms: [
         .iOS(SupportedPlatform.IOSVersion.v13),
         .macOS(SupportedPlatform.MacOSVersion.v10_15),
@@ -10,10 +10,13 @@ let package = Package(
         .watchOS(SupportedPlatform.WatchOSVersion.v6),
     ],
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
+        .library(
+            name: "Wiretapp",
+            targets: ["Wiretapp"]
+        ),
         .library(
             name: "wiretappTest",
-            targets: ["wiretappTest"]
+            targets: ["WiretappTest"]
         ),
     ],
     dependencies: [
@@ -21,14 +24,15 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "wiretappTest",
-            dependencies: [
-            ],
-            path: "Sources/wiretappTest/",
-            exclude: [ "Example/" ]
+            name: "Wiretapp",
+            dependencies: [],
+            path: "Sources/wiretapp/"
+        ),
+        .target(
+            name: "WiretappTest",
+            dependencies: ["Wiretapp"],
+            path: "Sources/wiretappTest/"
         ),
     ]
 )

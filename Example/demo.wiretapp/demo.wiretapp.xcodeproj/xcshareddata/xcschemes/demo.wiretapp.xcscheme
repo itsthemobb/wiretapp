@@ -79,7 +79,7 @@
          <EnvironmentVariable
             key = "mock_responses"
             value = "file://$(SOURCE_ROOT)/MockResponses/recorded"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

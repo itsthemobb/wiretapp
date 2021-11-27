@@ -1,5 +1,6 @@
 import Foundation
 import XCTest
+import Wiretapp
 
 open class WiretappBaseTestCase: XCTestCase {
     public var timeOut: TimeInterval = 30
