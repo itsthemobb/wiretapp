@@ -26,7 +26,7 @@ open class WiretappBaseTestCase: XCTestCase {
     }
 }
 
-extension XCUIElement {
+public extension XCUIElement {
     func waitForNonExistence(timeout: TimeInterval) -> Bool {
         let timeStart = Date().timeIntervalSince1970
         while Date().timeIntervalSince1970 <= timeStart + timeout {
@@ -37,7 +37,7 @@ extension XCUIElement {
 }
 
 // Source: https://sourcediving.com/clean-waiting-in-xcuitest-43bab495230f
-extension XCUIElement {
+public extension XCUIElement {
     /// The period of time in seconds to wait explicitly for expectations.
     static let waitTimeout: TimeInterval = 15
 
