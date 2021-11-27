@@ -17,7 +17,7 @@ open class WiretappBaseTestCase: XCTestCase {
         app.launch()
     }
 
-    func getRootPath() -> String? {
+    open func getRootPath() -> String? {
         let pathArray: [String] = #file.split(separator: "/")
             .dropLast(2)
             .map { String($0) }
