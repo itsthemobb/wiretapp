@@ -1,10 +1,10 @@
 import Foundation
 import XCTest
 
-class WiretappBaseTestCase: XCTestCase {
+public class WiretappBaseTestCase: XCTestCase {
     let timeOut: TimeInterval = 30
     var app = XCUIApplication()
-    override func setUp() {
+    public override func setUp() {
         super.setUp()
         app = XCUIApplication()
         if let mockResponses = getRootPath() {
