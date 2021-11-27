@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-public class WiretappBaseTestCase: XCTestCase {
+open class WiretappBaseTestCase: XCTestCase {
     let timeOut: TimeInterval = 30
     var app = XCUIApplication()
     public override func setUp() {
