@@ -3,11 +3,6 @@ import XCTest
 import WiretappTest
 
 class WireTappUITests: WiretappBaseTestCase {
-    override func setUp() {
-        super.setUp()
-        print("ok start")
-    }
-
     func test_ExampleTest() {
         app.staticTexts["Hello, world!"]
             .wait(until: \.isHittable)

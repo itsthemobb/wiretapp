@@ -1,8 +1,14 @@
 import Foundation
+
+enum WiretappError: Error {
+    case unableToLocateResponses
+    case unableToLocateTestCasePath
+}
+
 public class Wiretapp {
-    public static let defaultResponsesPath: String = "defaultResponses"
+    public static let responsePath: String = "wiretappResponses"
     public static let recordEnabled: String = "wiretappRecording"
-    public static let testCaseName: String = "testCaseName"
+    public static let testCaseName: String = "wiretappTestCaseName"
 
     public class func register() {
         // The last registered class gets called first [Muhammad U. Ali]
@@ -16,16 +22,14 @@ public class Wiretapp {
         return configuration
     }
 
-    public class func getRootPath() -> String {
-        let pathArray: [String] = #file.split(separator: "/")
-            .dropLast(2)
-            .map { String($0) }
-
-        let path = "file:///" + pathArray.joined(separator: "/")
-        return path
+    public class func getResponsePath() throws -> String {
+        guard let environmentVariable = ProcessInfo.processInfo.environment[responsePath] else {
+            throw WiretappError.unableToLocateResponses
+        }
+        return environmentVariable
     }
 
-    public class func getLaunchArgumentsFor(test: String) -> String {
-        Wiretapp.getRootPath() + "/MockResponses/" + test.createDirectoryPath()
+    public class func getResponsePathFor(test: String) throws -> String {
+        try Wiretapp.getResponsePath() + test.createDirectoryPath()
     }
 }

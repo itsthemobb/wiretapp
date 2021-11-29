@@ -2,11 +2,11 @@
   "object": {
     "pins": [
       {
-        "package": "wiretapp",
+        "package": "Wiretapp",
         "repositoryURL": "git@github.com:MrMUsmanAli/wiretapp.git",
         "state": {
           "branch": null,
-          "revision": "1ed99804f040a558fe7f1ec621d4c80eae06e97b",
+          "revision": "04a1ddc81002b2b5c1f26e5ecc5b47a368084bd1",
           "version": null
         }
       }

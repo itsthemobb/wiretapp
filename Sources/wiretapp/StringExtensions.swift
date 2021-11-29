@@ -23,7 +23,7 @@ public extension String {
         }
     }
 
-    public func createDirectoryPath() -> String {
+    func createDirectoryPath() -> String {
         groups(for: "^\\-\\[(\\w+)\\stest_(\\w+)\\]$").joined(separator: "/")
     }
 }

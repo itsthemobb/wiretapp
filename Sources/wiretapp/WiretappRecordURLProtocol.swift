@@ -3,7 +3,7 @@ import Foundation
 private var urlCounter: [String: Int] = [:]
 public class WiretappRecordURLProtocol: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    let recordPath: String = ""
+    let recordPath: String = "recorded/"
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
@@ -31,10 +31,10 @@ public class WiretappRecordURLProtocol: URLProtocol {
                 // write to disk here
                 
                 if
-                    let responsePath = ProcessInfo.processInfo.environment["mock_responses"],
-                    let directory = URL(string: responsePath),
+                    let responsePath = ProcessInfo.processInfo.environment[Wiretapp.responsePath],
+                    let directory = URL(string: "file://" + responsePath),
                     let response = response as? HTTPURLResponse,
-                    let filename = self.request.url?.path.fileName,
+                    let filename = self.request.url?.path.replacingOccurrences(of: "/", with: ":"),
                     let docURL = URL(string: responsePath)
                 {
                     urlCounter[filename, default: -1] += 1
@@ -81,11 +81,4 @@ public class WiretappRecordURLProtocol: URLProtocol {
         }
     }
     public override func stopLoading() {}
-}
-
-
-private extension String {
-    var fileName: String {
-        replacingOccurrences(of: "/", with: ":")
-    }
 }

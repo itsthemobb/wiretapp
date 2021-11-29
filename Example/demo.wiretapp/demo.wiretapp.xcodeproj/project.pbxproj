@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7EE970DC2754550B00736FF2 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappApp.swift; sourceTree = "<group>"; };
 		C168C73D27401CDF00EE0136 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
+				7EE970DC2754550B00736FF2 /* wiretapp */,
 				C168C73F27401CE400EE0136 /* Assets.xcassets */,
 				C168C73D27401CDF00EE0136 /* ContentView.swift */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,
