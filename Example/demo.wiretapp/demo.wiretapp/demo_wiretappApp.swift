@@ -13,7 +13,7 @@ struct demo_wiretappApp: App {
 
     var body: some Scene {
         return WindowGroup {
-            ContentView(
+            RootView(
                 networkService: NetworkService(
                     baseURL: "https://google.com",
                     urlSession: urlSession

@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A34F2242752F62F00130FBB /* Wiretapp in Frameworks */ = {isa = PBXBuildFile; productRef = 1A34F2232752F62F00130FBB /* Wiretapp */; };
 		1A34F2262752F62F00130FBB /* wiretappTest in Frameworks */ = {isa = PBXBuildFile; productRef = 1A34F2252752F62F00130FBB /* wiretappTest */; };
+		1A34F2292756E8A000130FBB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34F2282756E8A000130FBB /* RootView.swift */; };
+		1A34F22C2756E9E200130FBB /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34F22B2756E9E200130FBB /* PostsView.swift */; };
+		1A34F22E2756EA0500130FBB /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34F22D2756EA0500130FBB /* UsersView.swift */; };
 		C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */; };
-		C168C73E27401CDF00EE0136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73D27401CDF00EE0136 /* ContentView.swift */; };
 		C168C74027401CE400EE0136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C73F27401CE400EE0136 /* Assets.xcassets */; };
 		C168C74327401CE400EE0136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C74227401CE400EE0136 /* Preview Assets.xcassets */; };
 		C168C74E27401CE400EE0136 /* demo_wiretappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C74D27401CE400EE0136 /* demo_wiretappTests.swift */; };
@@ -37,10 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7EE970DC2754550B00736FF2 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
+		1A34F2282756E8A000130FBB /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1A34F22B2756E9E200130FBB /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		1A34F22D2756EA0500130FBB /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappApp.swift; sourceTree = "<group>"; };
-		C168C73D27401CDF00EE0136 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C168C73F27401CE400EE0136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C168C74227401CE400EE0136 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C168C74427401CE400EE0136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A34F22A2756E8DC00130FBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C168C74427401CE400EE0136 /* Info.plist */,
+				C168C73F27401CE400EE0136 /* Assets.xcassets */,
+				C168C74127401CE400EE0136 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C168C72F27401CDF00EE0136 = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +118,12 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
-				7EE970DC2754550B00736FF2 /* wiretapp */,
-				C168C73F27401CE400EE0136 /* Assets.xcassets */,
-				C168C73D27401CDF00EE0136 /* ContentView.swift */,
+				1A34F22A2756E8DC00130FBB /* Resources */,
+				1A34F2282756E8A000130FBB /* RootView.swift */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,
-				C168C74427401CE400EE0136 /* Info.plist */,
-				C168C74127401CE400EE0136 /* Preview Content */,
 				C1E12CCF274033D800C72059 /* NetworkService.swift */,
+				1A34F22B2756E9E200130FBB /* PostsView.swift */,
+				1A34F22D2756EA0500130FBB /* UsersView.swift */,
 			);
 			path = demo.wiretapp;
 			sourceTree = "<group>";
@@ -283,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A34F22E2756EA0500130FBB /* UsersView.swift in Sources */,
+				1A34F2292756E8A000130FBB /* RootView.swift in Sources */,
 				C1E12CD0274033D800C72059 /* NetworkService.swift in Sources */,
-				C168C73E27401CDF00EE0136 /* ContentView.swift in Sources */,
+				1A34F22C2756E9E200130FBB /* PostsView.swift in Sources */,
 				C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,9 +457,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"demo.wiretapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"demo.wiretapp/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = demo.wiretapp/Info.plist;
+				INFOPLIST_FILE = demo.wiretapp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,9 +478,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"demo.wiretapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"demo.wiretapp/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = demo.wiretapp/Info.plist;
+				INFOPLIST_FILE = demo.wiretapp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,7 +620,7 @@
 			repositoryURL = "git@github.com:MrMUsmanAli/wiretapp.git";
 			requirement = {
 				kind = revision;
-				revision = 04a1ddc81002b2b5c1f26e5ecc5b47a368084bd1;
+				revision = 08480846cdadee3bbc4fe1b559506a3b7ea794d1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

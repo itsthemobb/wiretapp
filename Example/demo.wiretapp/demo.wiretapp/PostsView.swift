@@ -1,16 +1,11 @@
 import Combine
-import Foundation
 import SwiftUI
 
-struct Todo: Decodable {
-    let title: String
-    let completed: Bool
-}
-
-struct ContentView: View {
+struct PostsView: View {
     @State var cancellable: AnyCancellable!
     @State var todos: [Todo] = []
     let networkService: NetworkService
+    let users: [User]
 
     var body: some View {
         VStack {
@@ -26,7 +21,7 @@ struct ContentView: View {
     }
 }
 
-extension ContentView {
+extension PostsView {
     fileprivate func todoCell(_ todo: Todo) -> some View {
         VStack {
             HStack {
