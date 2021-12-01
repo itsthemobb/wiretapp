@@ -2,9 +2,11 @@ import Combine
 import Foundation
 import SwiftUI
 
-struct Todo: Decodable {
+struct Post: Decodable {
+    let userId: Int
+    let id: Int
     let title: String
-    let completed: Bool
+    let body: String
 }
 
 struct User: Decodable {
@@ -25,18 +27,22 @@ struct RootView: View {
             if users.count == 0 {
                 Text("Loading Users..")
             } else {
-                PostsView(networkService: networkService, users: users)
+                NavigationView {
+                    PostsView(networkService: networkService, users: users)
+                }
                     .tabItem {
                         Label("Posts", systemImage: "list.bullet.circle")
                     }
-
-                UsersView()
+                
+                NavigationView {
+                    UsersView(users: users)
+                }
                     .tabItem {
                         Label("Users", systemImage: "person.3.fill")
                     }
             }
-            
-        }.onAppear {
+        }
+        .onAppear {
             self.cancellable = networkService.get(
                 url: URL(string: "https://jsonplaceholder.typicode.com/users")!,
                 modelType: [User].self
