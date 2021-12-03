@@ -12,6 +12,9 @@
 		1A34F22E2756EA0500130FBB /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34F22D2756EA0500130FBB /* UsersView.swift */; };
 		7EE970DF275709F700736FF2 /* Wiretapp in Frameworks */ = {isa = PBXBuildFile; productRef = 7EE970DE275709F700736FF2 /* Wiretapp */; };
 		7EE970E1275709F700736FF2 /* wiretappTest in Frameworks */ = {isa = PBXBuildFile; productRef = 7EE970E0275709F700736FF2 /* wiretappTest */; };
+		7EE970E32758222700736FF2 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E22758222700736FF2 /* Entities.swift */; };
+		7EE970E7275822C400736FF2 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E6275822C400736FF2 /* UserView.swift */; };
+		7EE970E9275823C300736FF2 /* WideText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E8275823C300736FF2 /* WideText.swift */; };
 		C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */; };
 		C168C74027401CE400EE0136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C73F27401CE400EE0136 /* Assets.xcassets */; };
 		C168C74327401CE400EE0136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C74227401CE400EE0136 /* Preview Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		1A34F2282756E8A000130FBB /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1A34F22B2756E9E200130FBB /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		1A34F22D2756EA0500130FBB /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		7EE970E22758222700736FF2 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		7EE970E6275822C400736FF2 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7EE970E8275823C300736FF2 /* WideText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideText.swift; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappApp.swift; sourceTree = "<group>"; };
 		C168C73F27401CE400EE0136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +100,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7EE970E42758224800736FF2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C1E12CCF274033D800C72059 /* NetworkService.swift */,
+				7EE970E22758222700736FF2 /* Entities.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7EE970E52758225500736FF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A34F22D2756EA0500130FBB /* UsersView.swift */,
+				1A34F2282756E8A000130FBB /* RootView.swift */,
+				1A34F22B2756E9E200130FBB /* PostsView.swift */,
+				7EE970E6275822C400736FF2 /* UserView.swift */,
+				7EE970E8275823C300736FF2 /* WideText.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C168C72F27401CDF00EE0136 = {
 			isa = PBXGroup;
 			children = (
@@ -118,12 +145,10 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
-				1A34F22A2756E8DC00130FBB /* Resources */,
-				1A34F2282756E8A000130FBB /* RootView.swift */,
+				7EE970E52758225500736FF2 /* Views */,
+				7EE970E42758224800736FF2 /* Networking */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,
-				C1E12CCF274033D800C72059 /* NetworkService.swift */,
-				1A34F22B2756E9E200130FBB /* PostsView.swift */,
-				1A34F22D2756EA0500130FBB /* UsersView.swift */,
+				1A34F22A2756E8DC00130FBB /* Resources */,
 			);
 			path = demo.wiretapp;
 			sourceTree = "<group>";
@@ -295,11 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE970E32758222700736FF2 /* Entities.swift in Sources */,
 				1A34F22E2756EA0500130FBB /* UsersView.swift in Sources */,
 				1A34F2292756E8A000130FBB /* RootView.swift in Sources */,
 				C1E12CD0274033D800C72059 /* NetworkService.swift in Sources */,
 				1A34F22C2756E9E200130FBB /* PostsView.swift in Sources */,
 				C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */,
+				7EE970E7275822C400736FF2 /* UserView.swift in Sources */,
+				7EE970E9275823C300736FF2 /* WideText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

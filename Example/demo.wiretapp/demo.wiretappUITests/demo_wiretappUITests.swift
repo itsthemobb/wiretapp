@@ -4,18 +4,14 @@ import WiretappTest
 
 class WireTappUITests: WiretappBaseTestCase {
     func test_ExampleTest() {
-        app.staticTexts["Hello, world!"]
-            .wait(until: \.isHittable)
-            .tap()
-
-        app.staticTexts["delectus aut autem"]
+        app.staticTexts["a great title for the first post"]
             .wait(until: \.exists)
 
-        app.staticTexts["Hello, world!"]
-            .wait(until: \.isHittable)
+        app.staticTexts["Users"]
             .tap()
 
-        app.staticTexts["Nick Gorman"]
+        app.staticTexts["East Liberty Street"]
             .wait(until: \.exists)
+        sleep(100)
     }
 }

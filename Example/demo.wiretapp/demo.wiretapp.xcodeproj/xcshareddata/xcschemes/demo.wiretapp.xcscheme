@@ -74,7 +74,7 @@
          <EnvironmentVariable
             key = "wiretappRecording"
             value = "true"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "wiretappResponses"
