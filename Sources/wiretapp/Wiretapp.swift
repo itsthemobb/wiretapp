@@ -10,14 +10,12 @@ public class Wiretapp {
     public static let testCaseName: String = "wiretappTestCaseName"
 
     public class func register() {
-        // The last registered class gets called first [Muhammad U. Ali]
-        // when a request is dispatched using URLSession.shared
-        URLProtocol.registerClass(WiretappRecordURLProtocol.self)
-        URLProtocol.registerClass(WiretappURLProtocol.self)
+        URLProtocol.registerClass(WiretappRecordURLPlugin.self)
+        URLProtocol.registerClass(WiretappMockURLPlugin.self)
     }
 
     public class func register(configuration: URLSessionConfiguration) -> URLSessionConfiguration {
-        configuration.protocolClasses = [WiretappRecordURLProtocol.self, WiretappURLProtocol.self]
+        configuration.protocolClasses = [WiretappRecordURLPlugin.self, WiretappMockURLPlugin.self]
         return configuration
     }
 

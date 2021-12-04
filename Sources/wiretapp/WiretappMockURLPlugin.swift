@@ -1,8 +1,7 @@
 import Foundation
 
 private var urlCounter: [String: Int] = [:]
-
-public class WiretappURLProtocol: URLProtocol {
+public class WiretappMockURLPlugin: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
@@ -29,7 +28,7 @@ public class WiretappURLProtocol: URLProtocol {
 }
 
 // MARK: - Private
-private extension WiretappURLProtocol {
+private extension WiretappMockURLPlugin {
     func send(_ request: URLRequest) -> Result<Output, Error> {
         guard let url = request.url else {
             return .failure(WiretappSessionError.noURL)

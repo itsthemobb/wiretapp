@@ -1,7 +1,7 @@
 import Foundation
 
 private var urlCounter: [String: Int] = [:]
-public class WiretappRecordURLProtocol: URLProtocol {
+public class WiretappRecordURLPlugin: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
     let recordPath: String = "recorded/"
     public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
@@ -28,7 +28,6 @@ public class WiretappRecordURLProtocol: URLProtocol {
                 self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
                 self.client?.urlProtocol(self, didLoad: data)
                 self.client?.urlProtocolDidFinishLoading(self)
-                // write to disk here
                 
                 if
                     let responsePath = ProcessInfo.processInfo.environment[Wiretapp.responsePath],
@@ -54,7 +53,6 @@ public class WiretappRecordURLProtocol: URLProtocol {
                             "status": response.statusCode,
                             "response": body ?? [:]
                         ]
-                        // create record path folder and api path folders
                         try self.createFolder(url: docURL.appendingPathComponent(self.recordPath))
                         try self.createFolder(url: docURL.appendingPathComponent(self.recordPath).appendingPathComponent(filename))
 
