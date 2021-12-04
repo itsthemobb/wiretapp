@@ -1,17 +1,17 @@
 import Foundation
 
 private var urlCounter: [String: Int] = [:]
-public class WiretappMockURLPlugin: URLProtocol {
+internal class WiretappMockURLPlugin: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
-    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
-    public override class func canInit(with request: URLRequest) -> Bool {
+    override class func canInit(with request: URLRequest) -> Bool {
         ProcessInfo.processInfo.environment[Wiretapp.testCaseName] != nil
     }
 
-    public override func startLoading() {
+    override func startLoading() {
         let processedInfo = send(request)
         switch processedInfo {
         case .success(let output):
@@ -24,7 +24,7 @@ public class WiretappMockURLPlugin: URLProtocol {
         client?.urlProtocolDidFinishLoading(self)
     }
 
-    public override func stopLoading() {}
+    override func stopLoading() {}
 }
 
 // MARK: - Private

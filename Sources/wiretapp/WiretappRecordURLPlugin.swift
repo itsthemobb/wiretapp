@@ -1,14 +1,14 @@
 import Foundation
 
 private var urlCounter: [String: Int] = [:]
-public class WiretappRecordURLPlugin: URLProtocol {
+internal class WiretappRecordURLPlugin: URLProtocol {
     typealias Output = (data: Data, response: URLResponse)
     let recordPath: String = "recorded/"
-    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
-    public override class func canInit(with request: URLRequest) -> Bool {
+    override class func canInit(with request: URLRequest) -> Bool {
         if let
             recordingEnabled = ProcessInfo.processInfo.environment[Wiretapp.recordEnabled],
             recordingEnabled == "true"
@@ -18,7 +18,25 @@ public class WiretappRecordURLPlugin: URLProtocol {
         return false
     }
 
-    public override func startLoading() {
+    override func startLoading() {
+        send()
+    }
+
+    override func stopLoading() {}
+}
+
+extension WiretappRecordURLPlugin {
+    func createFolder(url: URL) throws {
+        if !FileManager.default.fileExists(atPath: url.path) {
+            try FileManager.default.createDirectory(
+                atPath: url.path,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+        }
+    }
+
+    func send() {
         URLSession(configuration: .ephemeral).dataTask(with: request) { [weak self] data, response, error in
             if
                 let data = data,
@@ -28,7 +46,7 @@ public class WiretappRecordURLPlugin: URLProtocol {
                 self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
                 self.client?.urlProtocol(self, didLoad: data)
                 self.client?.urlProtocolDidFinishLoading(self)
-                
+
                 if
                     let responsePath = ProcessInfo.processInfo.environment[Wiretapp.responsePath],
                     let directory = URL(string: "file://" + responsePath),
@@ -69,14 +87,4 @@ public class WiretappRecordURLPlugin: URLProtocol {
         }
         .resume()
     }
-    func createFolder(url: URL) throws {
-        if !FileManager.default.fileExists(atPath: url.path) {
-            try FileManager.default.createDirectory(
-                atPath: url.path,
-                withIntermediateDirectories: true,
-                attributes: nil
-            )
-        }
-    }
-    public override func stopLoading() {}
 }
