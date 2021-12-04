@@ -31,7 +31,7 @@ internal class WiretappMockURLPlugin: URLProtocol {
 private extension WiretappMockURLPlugin {
     func send(_ request: URLRequest) -> Result<Output, Error> {
         guard let url = request.url else {
-            return .failure(WiretappSessionError.noURL)
+            return .failure(WiretappError.noURL)
         }
 
         // try by incrementing
@@ -52,7 +52,7 @@ private extension WiretappMockURLPlugin {
         }
 
         return .failure(
-            WiretappSessionError.unableToLocateResponse(
+            WiretappError.unableToLocateResponse(
                 url.path.replacingOccurrences(of: "/", with: ":") +
                 "\(String(describing: urlCounter[url.path]))" +
                 ".json"
@@ -83,12 +83,7 @@ private extension WiretappMockURLPlugin {
             let defaultPath = ProcessInfo.processInfo.environment[Wiretapp.responsePath],
             let url = URL(string: "file://" + defaultPath + "default/" + filename + ".json")
         {
-            do {
-                return try Data(contentsOf: url)
-            } catch {
-                print(error)
-            }
-            
+            return try? Data(contentsOf: url)
         }
         return nil
     }
@@ -109,7 +104,7 @@ private extension WiretappMockURLPlugin {
                 let data = try JSONSerialization.data(withJSONObject: responseJSON, options: .prettyPrinted)
                 return .success((data: data, response: urlResponse))
             }
-            return .failure(WiretappSessionError.unableToParseResponse)
+            return .failure(WiretappError.unableToParseResponse)
         } catch {
             return .failure(error)
         }

@@ -77,10 +77,8 @@ extension WiretappRecordURLPlugin {
                         try JSONSerialization
                             .data(withJSONObject: dictionary, options: .prettyPrinted)
                             .write(to: pathWithFileName)
-
-                        print("RECORDED TO PATH: ", pathWithFileName, "\n\n\n")
                     } catch {
-                        print("ERROR RECORDING: ", error, "\n\n\n")
+                        assertionFailure("ERROR RECORDING: \(error)")
                     }
                 }
             }

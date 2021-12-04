@@ -1,6 +1,6 @@
 import Foundation
 
-public extension String {
+internal extension String {
     func groups(for regexPattern: String) -> [String] {
         do {
             let text = self
@@ -18,7 +18,6 @@ public extension String {
                 return String(text[range])
             }
         } catch {
-            print("invalid regex: \(error.localizedDescription)")
             return []
         }
     }
