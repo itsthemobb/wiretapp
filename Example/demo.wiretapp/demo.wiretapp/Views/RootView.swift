@@ -12,7 +12,7 @@ struct RootView: View {
                 PostsView(networkService: networkService)
             }
             .tabItem {
-                Label("Posts", systemImage: "list.bullet.circle")
+                Label("Posts", systemImage: "doc.plaintext")
             }
             
             NavigationView {
