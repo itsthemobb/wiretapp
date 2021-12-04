@@ -23,6 +23,7 @@ struct PostsView: View {
                 } label: {
                     Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                 }
+                .accessibilityLabel("reload")
             }
         }
         .onAppear {
@@ -34,12 +35,12 @@ struct PostsView: View {
 extension PostsView {
     fileprivate func postCell(_ post: Post, user: User?) -> some View {
         VStack {
-            WideText(text: "Title: \n" + post.title)
+            WideText(text: post.title)
                 .padding([.bottom], 5)
-            WideText(text: "Body: \n" + post.body)
+            WideText(text: post.body)
                 .padding([.bottom], 5)
             user.map {
-                WideText(text: "Author: \n\($0.name)")
+                WideText(text: $0.name)
             }
             Divider()
         }

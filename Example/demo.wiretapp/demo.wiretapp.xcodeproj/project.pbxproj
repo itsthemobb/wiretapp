@@ -48,6 +48,7 @@
 		7EE970E22758222700736FF2 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		7EE970E6275822C400736FF2 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		7EE970E8275823C300736FF2 /* WideText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideText.swift; sourceTree = "<group>"; };
+		7EE970EB275AEF2700736FF2 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappApp.swift; sourceTree = "<group>"; };
 		C168C73F27401CE400EE0136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
+				7EE970EB275AEF2700736FF2 /* wiretapp */,
 				7EE970E52758225500736FF2 /* Views */,
 				7EE970E42758224800736FF2 /* Networking */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,

@@ -35,25 +35,21 @@ private extension WiretappURLProtocol {
             return .failure(WiretappSessionError.noURL)
         }
 
-        do {
-            // try by incrementing
-            urlCounter[url.path, default: -1] += 1
-            if let mockData = try loadJsonFromTestFolder(file: url.path) {
-                return process(mockData: mockData, url: url)
-            }
+        // try by incrementing
+        urlCounter[url.path, default: -1] += 1
+        if let mockData = loadJsonFromTestFolder(file: url.path) {
+            return process(mockData: mockData, url: url)
+        }
 
-            // second try, reset to 0
-            urlCounter[url.path, default: -1] = 0
-            if let mockData = try loadJsonFromTestFolder(file: url.path) {
-                return process(mockData: mockData, url: url)
-            }
+        // second try, reset to 0
+        urlCounter[url.path, default: -1] = 0
+        if let mockData = loadJsonFromTestFolder(file: url.path) {
+            return process(mockData: mockData, url: url)
+        }
 
-            // try default folder
-            if let mockData = try loadJsonFromDefaultFolder(file: url.path) {
-                return process(mockData: mockData, url: url)
-            }
-        } catch {
-            return .failure(error)
+        // try default folder
+        if let mockData = loadJsonFromDefaultFolder(file: url.path) {
+            return process(mockData: mockData, url: url)
         }
 
         return .failure(
@@ -65,34 +61,35 @@ private extension WiretappURLProtocol {
         )
     }
 
-    func loadJsonFromTestFolder(file: String) throws -> Data? {
-        guard let testName = ProcessInfo.processInfo.environment[Wiretapp.testCaseName] else {
-            throw WiretappError.unableToLocateTestCasePath
-        }
-        if let count = urlCounter[file] {
+    func loadJsonFromTestFolder(file: String) -> Data? {
+        if
+            let testName = ProcessInfo.processInfo.environment[Wiretapp.testCaseName],
+            let count = urlCounter[file]
+        {
             let fullPath = "file://" +
                             testName + "/" +
                             file.replacingOccurrences(of: "/", with: ":") +
                             "/\(String(describing: count))" +
                             ".json"
-            do {
-                if let url = URL(string: fullPath) {
-                    return try Data(contentsOf: url)
-                }
-            } catch {
-                throw error
+            if let url = URL(string: fullPath) {
+                return try? Data(contentsOf: url)
             }
         }
         return nil
     }
 
-    func loadJsonFromDefaultFolder(file: String) throws -> Data? {
+    func loadJsonFromDefaultFolder(file: String) -> Data? {
         let filename = file.replacingOccurrences(of: "/", with: ":")
-        guard let defaultPath = ProcessInfo.processInfo.environment[Wiretapp.responsePath] else {
-            throw WiretappError.unableToLocateResponses
-        }
-        if let url = URL(string: defaultPath + "default/" + filename + ".json") {
-            return try? Data(contentsOf: url)
+        if
+            let defaultPath = ProcessInfo.processInfo.environment[Wiretapp.responsePath],
+            let url = URL(string: "file://" + defaultPath + "default/" + filename + ".json")
+        {
+            do {
+                return try Data(contentsOf: url)
+            } catch {
+                print(error)
+            }
+            
         }
         return nil
     }
