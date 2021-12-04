@@ -2,7 +2,6 @@ import Foundation
 
 enum WiretappError: Error {
     case unableToLocateResponses
-    case unableToLocateTestCasePath
 }
 
 public class Wiretapp {
