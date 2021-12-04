@@ -1,0 +1,23 @@
+{
+  "response" : [
+    {
+        "body" : "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        "id" : 3,
+        "title" : "newest post, number 3!",
+        "userId" : 1
+    },
+    {
+        "body" : "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        "id" : 2,
+        "title" : "since we've reloaded the data, there is a new post available now!",
+        "userId" : 1
+    },
+    {
+        "body" : "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+        "id" : 1,
+        "title" : "the dynamic responses will have priority over default folder responses and can be combined!",
+        "userId" : 1
+    }
+  ],
+  "status" : 200
+}
