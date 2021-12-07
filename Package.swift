@@ -34,5 +34,10 @@ let package = Package(
             dependencies: ["Wiretapp"],
             path: "Sources/wiretappTest/"
         ),
+        .testTarget(
+            name: "WiretappTests",
+            dependencies: ["Wiretapp"],
+            path: "Tests/wiretappTests/"
+        ),
     ]
 )
