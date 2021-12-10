@@ -1,12 +1,14 @@
 import Combine
 import Foundation
 
-class NetworkService {
-    let baseURL: String
+protocol NetworkServiceType {
+    func get<Response: Decodable>(url: URL, modelType: Response.Type) -> AnyPublisher<Response, Error>
+}
+
+class URLSessionNetworkService: NetworkServiceType {
     let urlSession: URLSession
 
-    init(baseURL: String, urlSession: URLSession = .shared) {
-        self.baseURL = baseURL
+    init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
 

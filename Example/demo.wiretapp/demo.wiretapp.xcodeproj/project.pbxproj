@@ -15,13 +15,17 @@
 		7EE970E32758222700736FF2 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E22758222700736FF2 /* Entities.swift */; };
 		7EE970E7275822C400736FF2 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E6275822C400736FF2 /* UserView.swift */; };
 		7EE970E9275823C300736FF2 /* WideText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE970E8275823C300736FF2 /* WideText.swift */; };
+		C12139E72764009F001AAC0F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C12139E62764009F001AAC0F /* Alamofire */; };
+		C12139E927640414001AAC0F /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12139E827640414001AAC0F /* AlamofireNetworkService.swift */; };
+		C12139EB27640D3F001AAC0F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12139EA27640D3F001AAC0F /* SettingsView.swift */; };
+		C12139ED27640F7D001AAC0F /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12139EC27640F7D001AAC0F /* NetworkType.swift */; };
 		C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */; };
 		C168C74027401CE400EE0136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C73F27401CE400EE0136 /* Assets.xcassets */; };
 		C168C74327401CE400EE0136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C168C74227401CE400EE0136 /* Preview Assets.xcassets */; };
 		C168C74E27401CE400EE0136 /* demo_wiretappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C74D27401CE400EE0136 /* demo_wiretappTests.swift */; };
 		C168C75927401CE400EE0136 /* demo_wiretappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C75827401CE400EE0136 /* demo_wiretappUITests.swift */; };
 		C1E12CCE27402F5700C72059 /* MockResponses in Resources */ = {isa = PBXBuildFile; fileRef = C1E12CCC27402F4100C72059 /* MockResponses */; };
-		C1E12CD0274033D800C72059 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E12CCF274033D800C72059 /* NetworkService.swift */; };
+		C1E12CD0274033D800C72059 /* URLSessionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E12CCF274033D800C72059 /* URLSessionNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		7EE970E6275822C400736FF2 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		7EE970E8275823C300736FF2 /* WideText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideText.swift; sourceTree = "<group>"; };
 		7EE970EB275AEF2700736FF2 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
+		C12139E827640414001AAC0F /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
+		C12139EA27640D3F001AAC0F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C12139EC27640F7D001AAC0F /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
 		C168C73827401CDF00EE0136 /* demo.wiretapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.wiretapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappApp.swift; sourceTree = "<group>"; };
 		C168C73F27401CE400EE0136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +68,7 @@
 		C168C75827401CE400EE0136 /* demo_wiretappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_wiretappUITests.swift; sourceTree = "<group>"; };
 		C168C75A27401CE400EE0136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E12CCC27402F4100C72059 /* MockResponses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MockResponses; sourceTree = "<group>"; };
-		C1E12CCF274033D800C72059 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C1E12CCF274033D800C72059 /* URLSessionNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE970DF275709F700736FF2 /* Wiretapp in Frameworks */,
+				C12139E72764009F001AAC0F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +112,10 @@
 		7EE970E42758224800736FF2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C1E12CCF274033D800C72059 /* NetworkService.swift */,
+				C12139E827640414001AAC0F /* AlamofireNetworkService.swift */,
 				7EE970E22758222700736FF2 /* Entities.swift */,
+				C12139EC27640F7D001AAC0F /* NetworkType.swift */,
+				C1E12CCF274033D800C72059 /* URLSessionNetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -113,9 +123,10 @@
 		7EE970E52758225500736FF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A34F22D2756EA0500130FBB /* UsersView.swift */,
-				1A34F2282756E8A000130FBB /* RootView.swift */,
 				1A34F22B2756E9E200130FBB /* PostsView.swift */,
+				1A34F2282756E8A000130FBB /* RootView.swift */,
+				C12139EA27640D3F001AAC0F /* SettingsView.swift */,
+				1A34F22D2756EA0500130FBB /* UsersView.swift */,
 				7EE970E6275822C400736FF2 /* UserView.swift */,
 				7EE970E8275823C300736FF2 /* WideText.swift */,
 			);
@@ -199,6 +210,7 @@
 			name = demo.wiretapp;
 			packageProductDependencies = (
 				7EE970DE275709F700736FF2 /* Wiretapp */,
+				C12139E62764009F001AAC0F /* Alamofire */,
 			);
 			productName = demo.wiretapp;
 			productReference = C168C73827401CDF00EE0136 /* demo.wiretapp.app */;
@@ -278,6 +290,7 @@
 			mainGroup = C168C72F27401CDF00EE0136;
 			packageReferences = (
 				7EE970DD275709F700736FF2 /* XCRemoteSwiftPackageReference "wiretapp" */,
+				C12139E52764009F001AAC0F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C168C73927401CDF00EE0136 /* Products */;
 			projectDirPath = "";
@@ -325,9 +338,12 @@
 				7EE970E32758222700736FF2 /* Entities.swift in Sources */,
 				1A34F22E2756EA0500130FBB /* UsersView.swift in Sources */,
 				1A34F2292756E8A000130FBB /* RootView.swift in Sources */,
-				C1E12CD0274033D800C72059 /* NetworkService.swift in Sources */,
+				C1E12CD0274033D800C72059 /* URLSessionNetworkService.swift in Sources */,
 				1A34F22C2756E9E200130FBB /* PostsView.swift in Sources */,
+				C12139EB27640D3F001AAC0F /* SettingsView.swift in Sources */,
+				C12139ED27640F7D001AAC0F /* NetworkType.swift in Sources */,
 				C168C73C27401CDF00EE0136 /* demo_wiretappApp.swift in Sources */,
+				C12139E927640414001AAC0F /* AlamofireNetworkService.swift in Sources */,
 				7EE970E7275822C400736FF2 /* UserView.swift in Sources */,
 				7EE970E9275823C300736FF2 /* WideText.swift in Sources */,
 			);
@@ -653,6 +669,14 @@
 				revision = 8d4891b11ec57fcfd6b3ea74aaead85b3b1de07a;
 			};
 		};
+		C12139E52764009F001AAC0F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -665,6 +689,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7EE970DD275709F700736FF2 /* XCRemoteSwiftPackageReference "wiretapp" */;
 			productName = wiretappTest;
+		};
+		C12139E62764009F001AAC0F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C12139E52764009F001AAC0F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

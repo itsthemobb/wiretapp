@@ -4,7 +4,7 @@ import SwiftUI
 struct UsersView: View {
     @State var cancellable: AnyCancellable!
     @State var users: [User] = []
-    let networkService: NetworkService
+    let networkService: NetworkServiceType
 
     var body: some View {
         ScrollView {
