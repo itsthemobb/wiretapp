@@ -8,7 +8,10 @@ internal class WiretappMockURLPlugin: URLProtocol {
     }
 
     override class func canInit(with request: URLRequest) -> Bool {
-        ProcessInfo.processInfo.environment[Wiretapp.testCaseName] != nil
+        guard let testCaseName = ProcessInfo.processInfo.environment[Wiretapp.testCaseName] else {
+            return false
+        }
+        return !testCaseName.isEmpty
     }
 
     override func startLoading() {
