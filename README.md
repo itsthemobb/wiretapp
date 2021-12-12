@@ -1,11 +1,11 @@
 # Wiretapp
 
-A framework to making write UI tests a breeze!
+A framework to make writing UI tests a breeze!
 
-- Allows you to record and serve up mocked responses
-- No reliance on a server - making the UI tests deterministic and run super fast.
-- Allows for serving up mocks curated to the test case scenario currently running
-- Enables running tests in parallel speeding up pipeline runs without any extra affort!
+- Allows you to record and serve up canned responses! 🥫
+- No reliance on a server; making the UI tests deterministic and run super fast! 🏃‍♂️🚀
+- Allows for serving up mocks curated to the test case scenario currently running! 👩‍🍳
+- Enables running tests in parallel speeding up pipeline runs without any extra affort! 👯‍♀️
 
 # How do you setup Wiretapp?
 
@@ -23,15 +23,15 @@ A framework to making write UI tests a breeze!
 4. Add the `MockResponses` folder to your project as a `reference folder` (blue folder icon)
     - Do `Add Files to [project]`, selecting the folder you want to add and making sure the `Create folder references` radio button is checked 
 
-And thats it, you're all set!
+And thats it, you're all set! 🎉🥳
 
 # How to use Wiretapp?
 
 1. In your app code
     - Import `Wiretapp`
-    - call `Wiretapp.registerSharedSession()` (`Wiretapp.register(configuration:)` if you're using a custom implementation of `URLSession` or `Alamofire`) before your app starts making Network requests
+    - call `Wiretapp.registerSharedSession()` (`Wiretapp.register(configuration:)` if you're using a custom implementation of `URLSession` or `Alamofire`) <b><i>before</i></b> your app starts making Network requests
 2. Run your app through the scenario you'll be writing the UI test for
-    - You should start seeing the JSON responses start appearing under the `recorded` folder
+    - You should start seeing the JSON responses start appearing under the `recorded` folder 🤗
 
 <img src="./docs/demo.record.gif" width="800"/> 
 
@@ -39,9 +39,8 @@ And thats it, you're all set!
     - Import `WiretappTest`
     - Inherit your XCUITest with `WiretappBaseTestCase`
 4. Drag and drop the responses inside your `-recorded` folder under a new directory structure inside `MockResponses` a directory named according to your test scenario
-    - Example for a test case `test_LoginSuccessful` inside inside `LoginTests`, the directory would be `MockResponses/LoginTests/LoginSuccessful`
+    - Example for a test case `test_LoginSuccessful` inside `LoginTests`, the directory would be `MockResponses/LoginTests/LoginSuccessful`
 
-Run the test case and it should be running off of the mock JSON responses inside the mock responses folder!
+Run the test case and it should be running off of the mock JSON responses inside the mock responses folder! 🍾
 
-You can tweak the `status` code and modify the `response` data in the JSON files to simulate different scenarios for your tests.
-
+You can tweak the `status` code and modify the `response` data in the JSON files to simulate different scenarios ( error cases ie. 404 / 400 / etc ) for your tests!
