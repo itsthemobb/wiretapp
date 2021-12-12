@@ -1,7 +1,6 @@
 import Combine
 import Foundation
 import SwiftUI
-import Wiretapp
 
 struct RootView: View {
     @State var network: NetworkType = .urlSession

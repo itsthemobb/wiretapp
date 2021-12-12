@@ -49,10 +49,10 @@
 		1A34F2282756E8A000130FBB /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1A34F22B2756E9E200130FBB /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		1A34F22D2756EA0500130FBB /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		1ABBB4DF2766795500171261 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
 		7EE970E22758222700736FF2 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		7EE970E6275822C400736FF2 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		7EE970E8275823C300736FF2 /* WideText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideText.swift; sourceTree = "<group>"; };
-		7EE970EB275AEF2700736FF2 /* wiretapp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wiretapp; path = ../../..; sourceTree = "<group>"; };
 		C12139E827640414001AAC0F /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		C12139EA27640D3F001AAC0F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C12139EC27640F7D001AAC0F /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		C168C73A27401CDF00EE0136 /* demo.wiretapp */ = {
 			isa = PBXGroup;
 			children = (
-				7EE970EB275AEF2700736FF2 /* wiretapp */,
+				1ABBB4DF2766795500171261 /* wiretapp */,
 				7EE970E52758225500736FF2 /* Views */,
 				7EE970E42758224800736FF2 /* Networking */,
 				C168C73B27401CDF00EE0136 /* demo_wiretappApp.swift */,
