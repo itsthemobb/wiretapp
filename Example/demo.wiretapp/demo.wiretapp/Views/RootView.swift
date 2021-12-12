@@ -3,23 +3,29 @@ import Foundation
 import SwiftUI
 
 struct RootView: View {
-    @State var cancellable: AnyCancellable!
-    let networkService: NetworkService
+    @State var network: NetworkType = .urlSession
 
     var body: some View {
         TabView {
             NavigationView {
-                PostsView(networkService: networkService)
+                PostsView(networkService: network.service)
             }
             .tabItem {
                 Label("Posts", systemImage: "doc.plaintext")
             }
-            
+
             NavigationView {
-                UsersView(networkService: networkService)
+                UsersView(networkService: network.service)
             }
             .tabItem {
-                Label("Users", systemImage: "person.3.fill")
+                Label("Users", systemImage: "person.3")
+            }
+
+            NavigationView {
+                SettingsView(selection: $network)
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape")
             }
         }
     }

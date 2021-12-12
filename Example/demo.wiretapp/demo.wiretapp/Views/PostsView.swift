@@ -5,7 +5,7 @@ struct PostsView: View {
     @State var cancellable: AnyCancellable!
     @State var posts: [Post] = []
     @State var users: [User] = []
-    let networkService: NetworkService
+    let networkService: NetworkServiceType
 
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct PostsView: View {
                 Button {
                     getPosts()
                 } label: {
-                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    Image(systemName: "arrow.triangle.2.circlepath.circle")
                 }
                 .accessibilityLabel("reload")
             }
