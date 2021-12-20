@@ -5,7 +5,7 @@ A framework to make writing UI tests a breeze!
 - Allows you to record and serve up canned responses! 🥫
 - No reliance on a server; making the UI tests deterministic and run super fast! 🏃‍♂️🚀
 - Allows for serving up mocks curated to the test case scenario currently running! 👩‍🍳
-- Enables running tests in parallel speeding up pipeline runs without any extra affort! 👯‍♀️
+- Enables running tests in parallel speeding up pipeline runs without any extra effort! 👯‍♀️
 
 # How do you setup Wiretapp?
 
